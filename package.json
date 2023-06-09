@@ -1,0 +1,27 @@
+{
+  "name": "democracy-counter",
+  "version": "1.0.0",
+  "description": "A new way to prove democracy: Consensus of Conflits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunus433/democracy-counter.git"
+  },
+  "author": "Yunus Gürlek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yunus433/democracy-counter/issues"
+  },
+  "homepage": "https://github.com/yunus433/democracy-counter#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.1",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.10",
+    "node-fetch": "^3.3.1",
+    "solc": "^0.8.0",
+    "web3": "^4.0.1"
+  }
+}
