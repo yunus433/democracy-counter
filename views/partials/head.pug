@@ -20,6 +20,8 @@ html(lang='tr')
           each file_name in includes.external.js
             if file_name == 'page'
               script(src=`${URL}/js/${page}.js`)
+            else if file_name == 'web3'
+              script(src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js')
             else
               script(src=`${URL}/js/functions/${file_name}.js`)
     body

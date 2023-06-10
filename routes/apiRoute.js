@@ -9,9 +9,14 @@ const express = require('express');
 
 const router = express.Router();
 
+const findGetController = require('../controllers/api/find/get');
 const oppositionGetController = require('../controllers/api/opposition/get');
 const stateGetController = require('../controllers/api/state/get');
 
+router.get(
+  '/find',
+    findGetController
+);
 router.get(
   '/opposition',
     oppositionGetController

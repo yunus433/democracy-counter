@@ -36,6 +36,9 @@ if (cluster.isMaster) {
   app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
   app.use((req, res, next) => {
+    if (!req.query || typeof req.query != 'object')
+      req.query = {};
+
     res.locals.URL = URL;
 
     next();
