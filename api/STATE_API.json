@@ -1,0 +1,20 @@
+[
+  {
+    "public_key": "0x695180A4eF091b22CD817c5CA26DB054E8667588",
+    "name": "Yunus Gürlek",
+    "proof_of_identity": "@yunusguerlek",
+    "ballot_box_id": 225
+  },
+  {
+    "public_key": "0x3cb15e468ACff860275A18BAA61aBEfb84A2D442",
+    "name": "Yaman Can",
+    "proof_of_identity": "@yamancan",
+    "ballot_box_id": 467
+  },
+  {
+    "public_key": "0xDA5E1d8fD72039F172Ebc192645Ac3225260c15A",
+    "name": "Mete Koray Gergin",
+    "proof_of_identity": "@metekoray",
+    "ballot_box_id": 892
+  }
+]

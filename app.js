@@ -25,7 +25,7 @@ if (cluster.isMaster) {
   const URL = process.env.URL || 'http://localhost:3000';
   const PORT = process.env.PORT || 3000;
 
-  // const apiRouteController = require('./routes/apiRoute');
+  const apiRouteController = require('./routes/apiRoute');
   const indexRouteController = require('./routes/indexRoute');
   // const notaryRouteController = require('./routes/notaryRoute');
 
@@ -42,7 +42,7 @@ if (cluster.isMaster) {
   });
 
   app.use('/', indexRouteController);
-  // app.use('/api', apiRouteController);
+  app.use('/api', apiRouteController);
   // app.use('/notary', notaryRouteController);
 
   server.listen(PORT, () => {
