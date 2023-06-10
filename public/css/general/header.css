@@ -1,0 +1,26 @@
+.all-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-shape-one {
+  position: absolute;
+  width: 80vw;
+  height: 80vw;
+  left: -10vw;
+  top: -20vw;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(155, 198, 225, 1) 0%, rgba(255, 255, 255, 0.0001) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.42;
+}
+
+.background-shape-two {
+  position: absolute;
+  width: 80vh;
+  height: 80vh;
+  right: 10vh;
+  top: 15vh;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(240, 188, 255, 0.6) 0%, rgba(255, 146, 224, 6e-05) 100%);
+  mix-blend-mode: normal;
+  opacity: 0.65;
+}

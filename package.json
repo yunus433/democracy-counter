@@ -2,7 +2,7 @@
   "name": "democracy-counter",
   "version": "1.0.0",
   "description": "A new way to prove democracy: Consensus of Conflits",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +18,16 @@
   "homepage": "https://github.com/yunus433/democracy-counter#readme",
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.1",
+    "cluster": "^0.7.7",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.10",
     "node-fetch": "^3.3.1",
+    "pug": "^3.0.2",
+    "serve-favicon": "^2.5.0",
     "solc": "^0.8.0",
     "web3": "^4.0.1"
   }

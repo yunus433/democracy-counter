@@ -1,0 +1,100 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+	background-size: cover;
+	background: var(--background-color);
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--background-color);
+}
+
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+textarea, input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  resize: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+:root {
+  --page-vertical-padding: 50px;
+  --page-horizontal-padding: 50px;
+  --box-padding: 30px;
+  --side-width: 300px;
+
+  --background-color: rgba(254, 254, 254, 1);
+  --neutral-color: rgba(216, 216, 216, 1);
+  --selection-color: rgba(180, 180, 180, 1);
+  --state-color: rgba(55, 136, 255, 1);
+  --opposition-color: rgba(255, 79, 55, 1);
+  --text-color: rgba(1, 1, 1, 1);
+  --text-color-two: rgba(43, 55, 72, 1);
+  --placeholder-color: rgba(33, 51, 98, 0.5);
+}
+
+.display-none {
+  display: none !important;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+@media only screen and (min-width: 1500px) {
+  :root {
+    --page-horizontal-padding: calc((100vw - 1400px) / 2);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  :root {
+    --page-horizontal-padding: 40px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  :root {
+    --box-padding: 20px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  :root {
+    --page-horizontal-padding: 25px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  :root {
+    --page-horizontal-padding: 20px;
+  }
+}
