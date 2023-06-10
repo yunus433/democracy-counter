@@ -82,17 +82,22 @@ contract DemocracyCounter {
   }
 
   function validateBallotBox(
-    address public_key,
-    uint32 ballot_number,
+    string calldata name,
+    string calldata proof_of_identity,
+    uint32 ballot_box_number,
     bool side,
     uint32 state_vote_count,
     uint32 opposition_vote_count,
     bytes32[] calldata merkle_proof
   ) public {
+    address public_key = msg.sender;
+
     bytes32 node = keccak256(
       abi.encodePacked(
         public_key,
-        ballot_number,
+        name,
+        proof_of_identity,
+        ballot_box_number,
         side
       )
     );
@@ -107,7 +112,7 @@ contract DemocracyCounter {
 
     uint128 id = this.ballotIdToUint128(
       BallotId(
-        ballot_number,
+        ballot_box_number,
         state_vote_count,
         opposition_vote_count
       )
@@ -115,7 +120,7 @@ contract DemocracyCounter {
 
     if (!ballotBoxes[id].exists)
       this.createNewBallotBox(
-        ballot_number,
+        ballot_box_number,
         state_vote_count,
         opposition_vote_count
       );

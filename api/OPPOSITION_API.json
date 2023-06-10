@@ -3,18 +3,18 @@
     "public_key": "0x389Ec52cb3767A3096Be4bd047c7f2D075305eda",
     "name": "Akın Semih Pur",
     "proof_of_identity": "@akinsp",
-    "ballot_box_id": 225
+    "ballot_box_number": 225
   },
   {
     "public_key": "0x209Bd000A8e0B34a1EBe1a46C09770c3db67EDa6",
     "name": "Mustafa Aksöz",
     "proof_of_identity": "@mechul",
-    "ballot_box_id": 467
+    "ballot_box_number": 467
   },
   {
     "public_key": "0x200F2f9B86dbc6d85a41D232f39bDDf943b03419",
     "name": "Yasin Berk Yeşilyurt",
     "proof_of_identity": "@yasinberky",
-    "ballot_box_id": 892
+    "ballot_box_number": 892
   }
 ]

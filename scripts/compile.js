@@ -38,7 +38,7 @@ console.log(compiledCode)
 const bytecode = compiledCode.contracts[fileName][contractName].evm.bytecode.object;
 
 // Write the bytecode to a new file
-const bytecodePath = path.join(__dirname, '../artifacts/contracts/DemocracyCounter.bin');
+const bytecodePath = path.join(__dirname, '../public/artifacts/contracts/DemocracyCounter.bin');
 fs.writeFileSync(bytecodePath, bytecode);
 
 // Log the compiled contract code to the console
@@ -48,7 +48,7 @@ console.log('Contract Bytecode:\n', bytecode);
 const abi = compiledCode.contracts[fileName][contractName].abi;
 
 // Write the Contract ABI to a new file
-const abiPath = path.join(__dirname, '../artifacts/build-info/DemocracyCounter.json');
+const abiPath = path.join(__dirname, '../public/artifacts/build-info/DemocracyCounter.json');
 fs.writeFileSync(abiPath, JSON.stringify(abi, null, '\t'));
 
 // Log the Contract ABI to the console

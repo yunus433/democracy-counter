@@ -25,7 +25,7 @@
     "http": "^0.0.1-security",
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.3.10",
-    "node-fetch": "^3.3.1",
+    "node-fetch": "^2.6.9",
     "pug": "^3.0.2",
     "serve-favicon": "^2.5.0",
     "solc": "^0.8.0",

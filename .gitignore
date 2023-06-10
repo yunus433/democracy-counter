@@ -7,3 +7,5 @@ typechain
 build
 cache
 artifacts
+public/artifacts/*
+public/build/*
