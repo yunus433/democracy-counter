@@ -4,8 +4,8 @@ module.exports = (req, res) => {
     title: 'Instantaniously Learn the Results of the Election',
     includes: {
       external: {
-        css: ['general', 'header', 'page'],
-        js: ['ancestorWithClassName', 'interact', 'page', 'serverRequest', 'web3']
+        css: ['confirm', 'general', 'header', 'page'],
+        js: ['ancestorWithClassName', 'cookies', 'createConfirm', 'header', 'interact', 'page', 'serverRequest', 'web3']
       }
     }
   });

@@ -1,30 +1,57 @@
-let User;
+let ballot_boxes;
+let map = {};
 
-function updateLoginState() {
-  document.querySelector('.all-header-login-button').style.display = 'none';
-  document.querySelector('.all-header-login-info').style.display = 'flex';
-  document.querySelector('.all-header-login-info').style.backgroundColor = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
-  document.querySelector('.all-header-login-info').style.color = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
-
-  document.querySelector('.all-header-login-part').innerHTML = User.side ? 'Opposition' : 'State';
-  document.querySelector('.all-header-login-address').innerHTML = User.public_key;
-}
-
-function getUser() {
-  serverRequest('/api/find?public_key=' + Account, 'GET', {}, res => {
+function loadBallotBoxes(callback)  {
+  serverRequest('/api/ballot_boxes', 'GET', {}, res => {
     if (res.error) return alert('Error: ' + res.error);
 
-    User = res.user;
+    ballot_boxes = res;
 
-    updateLoginState();
+    callback();
   });
-}
+};
+
+function loadMapData(callback) {
+  loadBallotBoxes(() => {
+    ballot_boxes.forEach(async ballot_box => {
+      const state = await Contract.methods.getBallotBoxById(ballot_box.number).call();
+      
+      if (!map[ballot_box.city])
+        map[ballot_box.city] = {
+          state_vote_count: 0,
+          opposition_vote_count: 0,
+          state_validator_count: 0,
+          opposition_validator_count: 0,
+          ballot_boxes: []
+        };
+
+      map[ballot_box.city].state_vote_count += parseInt(state.state_vote_count);
+      map[ballot_box.city].opposition_vote_count += parseInt(state.opposition_vote_count);
+      map[ballot_box.city].state_validator_count += parseInt(state.state_validator_count);
+      map[ballot_box.city].opposition_validator_count += parseInt(state.opposition_validator_count);
+
+      map[ballot_box.city].ballot_boxes.push(ballot_box);
+    });
+
+    callback();
+  });
+};
+
+function updateMap() {
+  loadMapData(() => {
+    Object.keys(map).forEach(city => {
+      const element = document.getElementById(city);
+
+      if (!element) return;
+
+      element.childNodes[0].style.fill = map[city].state_vote_count > map[city].opposition_vote_count ? 'var(--state-color)' : 'var(--opposition-color)';
+
+      if (map[city].state_vote_count == map[city].opposition_vote_count)
+        element.childNodes[0].style.fill = 'var(--neutral-color)';
+    });
+  });
+};
 
 window.addEventListener('load', async () => {
-  document.addEventListener('click', async event => {
-    if (ancestorWithClassName(event.target, 'all-header-login-button')) {
-      await connectMetaMask();
-      getUser();
-    }
-  });
+  updateMap();
 });

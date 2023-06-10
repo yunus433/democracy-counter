@@ -12,6 +12,7 @@ contract DemocracyCounter {
 
   struct BallotBox {
     bool exists;
+    uint32 ballot_number;
     uint32 state_vote_count;
     uint32 opposition_vote_count;
     uint32 state_validator_count;
@@ -21,10 +22,36 @@ contract DemocracyCounter {
   bytes32 auditors_hash; // Merkle tree root for auditors
   mapping(uint128 => BallotBox) public ballotBoxes;
 
+  // IMPORTANT
+  // This contract should normally to be deployed with the following constructor
+  // As a proof of concept, we are deploying it with the second constructor to start with a pre-filled ballot_boxes mapping
+  // If not, you should fill the ballot_boxes mapping with the createNewBallotBox function, with a different public key on each call
+
+  // constructor(
+  //   bytes32 _auditors_hash
+  // ) {
+  //   auditors_hash = _auditors_hash;
+  // }
+
   constructor(
-    bytes32 _auditors_hash
+    bytes32 _auditors_hash,
+    BallotBox[] memory ballot_boxes
   ) {
     auditors_hash = _auditors_hash;
+
+    for (uint32 i = 0; i < ballot_boxes.length; i++) {
+      BallotBox memory ballot_box = ballot_boxes[i];
+
+      uint128 id = this.ballotIdToUint128(
+        BallotId(
+          ballot_box.ballot_number,
+          ballot_box.state_vote_count,
+          ballot_box.opposition_vote_count
+        )
+      );
+
+      ballotBoxes[id] = ballot_box;
+    }
   }
 
   function ballotIdToUint128(
@@ -74,6 +101,7 @@ contract DemocracyCounter {
 
     ballotBoxes[id] = BallotBox({
       exists: true,
+      ballot_number: ballot_number,
       state_vote_count: state_vote_count,
       opposition_vote_count: opposition_vote_count,
       state_validator_count: 0,

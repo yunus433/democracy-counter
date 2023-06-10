@@ -5,7 +5,7 @@ module.exports = (req, res) => {
     includes: {
       external: {
         css: ['general', 'header', 'page'],
-        js: ['ancestorWithClassName', 'page', 'serverRequest']
+        js: ['ancestorWithClassName', 'cookies', 'header', 'page', 'serverRequest']
       }
     }
   });
