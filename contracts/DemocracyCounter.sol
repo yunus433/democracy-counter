@@ -18,11 +18,11 @@ contract DemocracyCounter {
     uint32 opposition_validator_count;
   }
 
-  string auditors_hash; // Merkle tree root for auditors
+  bytes32 auditors_hash; // Merkle tree root for auditors
   mapping(uint128 => BallotBox) public ballotBoxes;
 
   constructor(
-    string memory _auditors_hash
+    bytes32 _auditors_hash
   ) {
     auditors_hash = _auditors_hash;
   }
@@ -47,7 +47,7 @@ contract DemocracyCounter {
       });
   }
 
-  function getAuditorsHash() public view returns (string memory) {
+  function getAuditorsHash() public view returns (bytes32) {
     return auditors_hash;
   }
 

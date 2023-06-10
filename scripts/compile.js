@@ -1,14 +1,12 @@
-const solc = require('solc');
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
+const solc = require('solc');
 
 const fileName = '../contracts/DemocracyCounter.sol';
 const contractName = 'DemocracyCounter';
 
 const contractPath = path.join(__dirname, fileName);
 const sourceCode = fs.readFileSync(contractPath, 'utf8');
-
-console.log(contractPath);
 
 const input = {
     language: 'Solidity',
@@ -26,7 +24,15 @@ const input = {
     },
 };
 
-const compiledCode = JSON.parse(solc.compile(JSON.stringify(input)));
+function findImports(relativePath) {
+    const absolutePath = path.resolve(__dirname, '../node_modules', relativePath);
+    const source = fs.readFileSync(absolutePath, 'utf8');
+    return { contents: source };
+  }
+
+const compiledCode = JSON.parse(solc.compile(JSON.stringify(input), { import: findImports }));
+
+console.log(compiledCode)
 
 // Get the bytecode from the compiled contract
 const bytecode = compiledCode.contracts[fileName][contractName].evm.bytecode.object;
@@ -42,7 +48,7 @@ console.log('Contract Bytecode:\n', bytecode);
 const abi = compiledCode.contracts[fileName][contractName].abi;
 
 // Write the Contract ABI to a new file
-const abiPath = path.join(__dirname, '../build-info/DemocracyCounter.json');
+const abiPath = path.join(__dirname, '../artifacts/build-info/DemocracyCounter.json');
 fs.writeFileSync(abiPath, JSON.stringify(abi, null, '\t'));
 
 // Log the Contract ABI to the console
