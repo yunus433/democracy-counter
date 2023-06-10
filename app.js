@@ -27,7 +27,7 @@ if (cluster.isMaster) {
 
   const apiRouteController = require('./routes/apiRoute');
   const indexRouteController = require('./routes/indexRoute');
-  // const notaryRouteController = require('./routes/notaryRoute');
+  const notaryRouteController = require('./routes/notaryRoute');
 
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
@@ -43,7 +43,7 @@ if (cluster.isMaster) {
 
   app.use('/', indexRouteController);
   app.use('/api', apiRouteController);
-  // app.use('/notary', notaryRouteController);
+  app.use('/notary', notaryRouteController);
 
   server.listen(PORT, () => {
     console.log(`Server is on port ${PORT} as Worker ${cluster.worker.id} running @ process ${cluster.worker.process.pid}`);

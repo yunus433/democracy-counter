@@ -1,10 +1,16 @@
+const dotenv = require('dotenv');
 const fetch = require('node-fetch');
 const fs = require('fs');
+const keccak256 = require('keccak256');
 const path = require('path');
+
+const { MerkleTree } = require('merkletreejs');
 const { Web3 } = require('web3');
 
-const STATE_API = '';
-const OPOSITION_API = '';
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+const STATE_API = process.env.STATE_API || 'http://localhost:3000/api/state';
+const OPOSITION_API = process.env.OPOSITION_API || 'http://localhost:3000/api/opposition';
 
 const web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
 web3.eth.Contract.handleRevert = true;
@@ -25,7 +31,9 @@ async function deploy() {
     console.log('deployer account:', defaultAccount);
 
     const stateAuditors = await fetch(STATE_API).json();
-    const opositionAuditors = await fetch(OPOSITION_API).json(); 
+    const opositionAuditors = await fetch(OPOSITION_API).json();
+
+
 
     const myContract = MyContract.deploy({
         data: '0x' + bytecode,

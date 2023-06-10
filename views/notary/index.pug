@@ -1,0 +1,46 @@
+extends ../partials/header
+block main
+  .all-wrapper
+    .all-header
+      a.all-header-logo(href='/')
+        img(src=`${URL}/svg/logo.svg` alt='Democracy Counter Logo')
+      .all-header-login-wrapper
+        .all-header-login-info(style='background-color: var(--state-color); color: var(--state-color)')
+          span.all-header-login-part State
+          span.all-header-login-address 0x3cb15e468ACff860275A18BAA61aBEfb84A2D442
+          svg.all-header-logout-icon(viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M7.99985 9H0.0478516C0.549852 3.947 4.81285 0 9.99785 0C15.5209 0 19.9979 4.477 19.9979 10C19.9979 15.523 15.5209 20 9.99785 20C4.81285 20 0.549852 16.053 0.0478516 11H7.99785V14L12.9979 10L7.99785 6V9H7.99985Z')
+    .all-content
+      .all-content-left-wrapper
+        .all-content-left-title Notary Mode
+        .all-content-how-it-works-wrapper
+          h1.all-content-how-it-works-title How it Works?
+          p.all-content-how-it-works-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis accumsan aliquam, quam libero ultricies nunc, nec ultricies nunc.
+      .all-content-middle-wrapper
+        h1.all-content-middle-ballot-box-number-title Ballot Box No:
+        h2.all-content-middle-ballot-box-number #0467
+        img.all-content-middle-ballot-box(src=`${URL}/img/box.png` alt='Democracy Counter Ballot Box')
+        h2.all-content-middle-ballot-box-instructions Enter the election results in your region.
+        .all-content-middle-results-wrapper
+          .all-content-middle-results-each-side-wrapper
+            span.all-content-middle-results-each-side-title(style='background-color: var(--state-color)') State
+            input.all-content-middle-results-each-side(type='number' placeholder='_ _ _ _' value="150" autocomplete='none')
+          .all-content-middle-results-each-side-wrapper
+            span.all-content-middle-results-each-side-title(style='background-color: var(--opposition-color)') Opposition
+            input.all-content-middle-results-each-side(type='number' placeholder='_ _ _ _' autocomplete='none')
+        .all-content-middle-send-results-button Approve the Results
+      .all-content-right-wrapper
+        .all-content-right-card-wrapper
+          h1.all-content-right-card-name Yaman Can
+          h2.all-content-right-card-address 0x3cb15e468ACff860275A18BAA61aBEfb84A2D442
+          img.all-content-right-card-logo(src=`${URL}/img/state.png` alt='Democracy Counter State Logo')
+          span.all-content-right-card-side State
+          span.all-content-right-card-side-info Official Notary of the State
+          a.all-content-right-card-proof-of-identity-wrapper(href='/' target='_blank')
+            svg.all-content-right-card-proof-of-identity-icon(viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg")
+              path(d="M17.7167 2C17.075 2.29167 16.3833 2.48333 15.6667 2.575C16.4 2.13333 16.9667 1.43333 17.2333 0.591666C16.5417 1.00833 15.775 1.3 14.9667 1.46667C14.3083 0.75 13.3833 0.333333 12.3333 0.333333C10.375 0.333333 8.77499 1.93333 8.77499 3.90833C8.77499 4.19167 8.80832 4.46667 8.86666 4.725C5.89999 4.575 3.25833 3.15 1.49999 0.991666C1.19166 1.51667 1.01666 2.13333 1.01666 2.78333C1.01666 4.025 1.64166 5.125 2.60833 5.75C2.01666 5.75 1.46666 5.58333 0.983325 5.33333V5.35833C0.983325 7.09167 2.21666 8.54167 3.84999 8.86667C3.3256 9.01017 2.77507 9.03014 2.24166 8.925C2.70574 10.3816 4.0465 11.3805 5.57499 11.4083C4.31135 12.4087 2.74499 12.9494 1.13333 12.9417C0.849992 12.9417 0.566659 12.925 0.283325 12.8917C1.86666 13.9083 3.74999 14.5 5.76666 14.5C12.3333 14.5 15.9417 9.05 15.9417 4.325C15.9417 4.16667 15.9417 4.01667 15.9333 3.85833C16.6333 3.35833 17.2333 2.725 17.7167 2Z")
+            .all-content-right-card-proof-of-identity-text @yamancan
+          span.all-content-right-card-ballot-number Authorized Ballot Box: #0467
+        span.all-content-right-info You are registered and accepted as
+        span.all-content-right-side(style='background-color: var(--state-color)') Notary of the State
+        
