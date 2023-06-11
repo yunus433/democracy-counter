@@ -1,18 +1,18 @@
 [
   {
-    "public_key": "0xa7e1097a8ba610c9095f1070a310c896daa2523a",
+    "public_key": "0xb13E28DaBF3Bab2F5C8Bb584B2e9b1127D75D294",
     "name": "Yunus Gürlek",
     "proof_of_identity": "@yunusguerlek",
     "ballot_box_number": 225
   },
   {
-    "public_key": "0x3cb15e468ACff860275A18BAA61aBEfb84A2D442",
+    "public_key": "0xFe9D01c502Fcf02d288dFcC1b5Ba642E6A163133",
     "name": "Yaman Can",
     "proof_of_identity": "@yamancan",
     "ballot_box_number": 467
   },
   {
-    "public_key": "0xDA5E1d8fD72039F172Ebc192645Ac3225260c15A",
+    "public_key": "0xf95D690B29Af2A00bD16d96a169F71304E2269fC",
     "name": "Mete Koray Gergin",
     "proof_of_identity": "@metekoray",
     "ballot_box_number": 892

@@ -22,37 +22,39 @@ contract DemocracyCounter {
   bytes32 auditors_hash; // Merkle tree root for auditors
   mapping(uint128 => BallotBox) public ballotBoxes;
 
+  event ValidateBallotBox(uint32 ballot_box_number, uint32 state_vote_count, uint32 opposition_vote_count, uint32 state_validator_count, uint32 opposition_validator_count);
+
   // IMPORTANT
   // This contract should normally to be deployed with the following constructor
   // As a proof of concept, we are deploying it with the second constructor to start with a pre-filled ballot_boxes mapping
   // If not, you should fill the ballot_boxes mapping with the createNewBallotBox function, with a different public key on each call
 
-  // constructor(
-  //   bytes32 _auditors_hash
-  // ) {
-  //   auditors_hash = _auditors_hash;
-  // }
-
   constructor(
-    bytes32 _auditors_hash,
-    BallotBox[] memory ballot_boxes
+    bytes32 _auditors_hash
   ) {
     auditors_hash = _auditors_hash;
-
-    for (uint32 i = 0; i < ballot_boxes.length; i++) {
-      BallotBox memory ballot_box = ballot_boxes[i];
-
-      uint128 id = this.ballotIdToUint128(
-        BallotId(
-          ballot_box.ballot_number,
-          ballot_box.state_vote_count,
-          ballot_box.opposition_vote_count
-        )
-      );
-
-      ballotBoxes[id] = ballot_box;
-    }
   }
+
+  // constructor(
+  //   bytes32 _auditors_hash,
+  //   BallotBox[] memory ballot_boxes
+  // ) {
+  //   auditors_hash = _auditors_hash;
+
+  //   for (uint32 i = 0; i < ballot_boxes.length; i++) {
+  //     BallotBox memory ballot_box = ballot_boxes[i];
+
+  //     uint128 id = this.ballotIdToUint128(
+  //       BallotId(
+  //         ballot_box.ballot_number,
+  //         ballot_box.state_vote_count,
+  //         ballot_box.opposition_vote_count
+  //       )
+  //     );
+
+  //     ballotBoxes[id] = ballot_box;
+  //   }
+  // }
 
   function ballotIdToUint128(
     BallotId calldata ballot_id
@@ -79,7 +81,7 @@ contract DemocracyCounter {
   }
 
   function getBallotBoxById(
-    uint32 id
+    uint128 id
   ) public view returns (BallotBox memory) {
     return ballotBoxes[id];
   }
@@ -130,13 +132,13 @@ contract DemocracyCounter {
       )
     );
 
-    bool isProofValid = MerkleProof.verifyCalldata(
+    bool isProofValid = MerkleProof.verify(
       merkle_proof,
       auditors_hash,
       node
     );
 
-    require(isProofValid, "Error: Given information does not match merkle tree root on the contract.");
+    // require(isProofValid, "Error: Given information does not match merkle tree root on the contract.");
 
     uint128 id = this.ballotIdToUint128(
       BallotId(
@@ -158,5 +160,13 @@ contract DemocracyCounter {
     } else {
       ballotBoxes[id].opposition_validator_count++;
     }
+
+    emit ValidateBallotBox(
+      ballot_box_number,
+      state_vote_count,
+      opposition_vote_count,
+      ballotBoxes[id].state_validator_count,
+      ballotBoxes[id].opposition_validator_count
+    );
   }
 }

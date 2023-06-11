@@ -20,6 +20,10 @@ html(lang='tr')
           each file_name in includes.external.js
             if file_name == 'page'
               script(src=`${URL}/js/${page}.js`)
+            else if file_name == 'keccak256'
+              script(src='https://cdn.jsdelivr.net/npm/keccak256@latest/keccak256.js')
+            else if file_name == 'merkletree'
+              script(src='https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js')
             else if file_name == 'web3'
               script(src='https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js')
             else

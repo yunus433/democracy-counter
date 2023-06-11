@@ -46,7 +46,7 @@ async function connectMetaMask() {
 
   if (typeof provider !== 'undefined') {
     try {
-      Account = await provider.request({ method: 'eth_requestAccounts' })
+      Account = (await provider.request({ method: 'eth_requestAccounts' }))[0]
     } catch (err) {
       throw Error(err);
     };

@@ -26,6 +26,7 @@ if (cluster.isMaster) {
   const PORT = process.env.PORT || 3000;
 
   const apiRouteController = require('./routes/apiRoute');
+  const dataRouteController = require('./routes/dataRoute');
   const indexRouteController = require('./routes/indexRoute');
   const notaryRouteController = require('./routes/notaryRoute');
 
@@ -46,6 +47,7 @@ if (cluster.isMaster) {
 
   app.use('/', indexRouteController);
   app.use('/api', apiRouteController);
+  app.use('/data', dataRouteController);
   app.use('/notary', notaryRouteController);
 
   server.listen(PORT, () => {

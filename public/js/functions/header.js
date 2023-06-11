@@ -8,6 +8,30 @@ function updateLoginState() {
 
   document.querySelector('.all-header-login-part').innerHTML = User.side ? 'Opposition' : 'State';
   document.querySelector('.all-header-login-address').innerHTML = User.public_key;
+
+  if (document.getElementById('notary-wrapper')) {
+    document.getElementById('notary-wrapper').style.display = 'flex';
+
+    let card;
+
+    if (User.side)
+      card = document.getElementById('opposition-auditor-card');
+    else
+      card = document.getElementById('state-auditor-card');
+
+    card.style.display = 'flex';
+    card.querySelector('.all-content-right-card-name').innerHTML = User.name;
+    card.querySelector('.all-content-right-card-address').innerHTML = User.public_key;
+    card.querySelector('.all-content-right-card-proof-of-identity-text').innerHTML = User.proof_of_identity;
+    card.querySelector('.all-content-right-card-ballot-number').innerHTML = '#' + User.ballot_box_number;
+
+    document.getElementById('notary-side').style.backgroundColor = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
+    document.getElementById('notary-side').innerHTML = 'Notary of the ' + (User.side ? 'Opposition' : 'State');
+
+    document.querySelector('.all-content-middle-ballot-box-number').innerHTML = '#' + User.ballot_box_number;
+  } else {
+    document.querySelector('.all-content-audit-button').style.display = 'flex';
+  }
 };
 
 function getUser() {
@@ -16,7 +40,7 @@ function getUser() {
   if (User) return updateLoginState();
   
   serverRequest('/api/find?public_key=' + Account, 'GET', {}, res => {
-    if (res.error) return alert('Error: ' + res.error);
+    if (res.error) return throwError(res.error);
 
     User = res.user;
 

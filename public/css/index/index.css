@@ -67,6 +67,28 @@
   line-height: 150%;
 }
 
+.all-content-audit-button {
+  text-decoration: none;
+  height: 40px;
+  min-height: 40px;
+  width: 100%;
+  min-width: 100%;
+  font-weight: 600;
+  color: var(--background-color);
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(61.94% 61.94% at 50% 23.86%, rgba(1, 1, 1, 1) 0%, rgba(1, 1, 1, 1)  100%);
+  box-shadow: 0px 2px 9px -2px rgba(91, 128, 224, 0.5), inset 0px 1px 33px 13px rgba(111, 151, 255, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: auto;
+}
+.all-content-audit-button:hover {
+  box-shadow: 0px 2px 9px -2px rgba(91, 128, 224, 0.9), inset 0px 1px 33px 13px rgba(111, 151, 255, 0.5);
+}
+
 .all-content-middle-wrapper {
   width: calc(100% - 2 * var(--box-padding) - 2 * var(--side-width));
   height: 100%;
