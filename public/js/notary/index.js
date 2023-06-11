@@ -57,12 +57,29 @@ window.addEventListener('load', () => {
               proof
             )
             .send({
-              from: "0xb13E28DaBF3Bab2F5C8Bb584B2e9b1127D75D294",
+              from: "0xDdB5e6bC33476BA0eDD6AF072C4A0EA50Ce685d4",
               gas: 1000000,
               gasPrice: 10000000000
             });
 
-            console.log('Transaction Hash: ' + receipt.transactionHash);
+          console.log('Transaction Hash: ' + receipt.transactionHash);
+
+          serverRequest('/data', 'POST', {
+            ballot_box_number: User.ballot_box_number,
+            state_vote_count: parseInt(state_result),
+            opposition_vote_count: parseInt(opposition_result)
+          }, res => {
+            if (res.error)
+              return throwError(res.error);
+
+            createConfirm({
+              title: 'Your registration was successful.',
+              text: 'Thank you for participating on having a more decentralized and transparent election.',
+              accept: 'Close'
+            }, _ => {
+              document.querySelector('.all-content-middle-send-results-button').style.display = 'none';
+            });
+          })
         } catch (err) {
           console.log(err)
         }

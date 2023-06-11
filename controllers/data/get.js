@@ -5,8 +5,8 @@ module.exports = (req, res) => {
   fs.readFile(path.join(__dirname, '../../data/results.json'), (err, data) => {
     if (err) return res.json({ error: err });
 
-    const result = JSON.parse(data);
+    const results = JSON.parse(data);
 
-    return res.json(result);
+    return res.json(results);
   });
 }

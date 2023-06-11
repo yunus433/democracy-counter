@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser');
 const cluster = require('cluster');
 const dotenv = require('dotenv');
 const express = require('express');
@@ -35,10 +36,16 @@ if (cluster.isMaster) {
 
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+  app.use(bodyParser.json({}));
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
   app.use((req, res, next) => {
     if (!req.query || typeof req.query != 'object')
       req.query = {};
+     if (!req.body || typeof req.body != 'object')
+      req.body = {};
 
     res.locals.URL = URL;
 

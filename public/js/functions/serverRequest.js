@@ -22,6 +22,7 @@ function serverRequest (url, method, data, callback) {
 
     xhr.send(formdata);
   } else if (method == 'POST') {
+    console.log(JSON.stringify(data));
     xhr.open('POST', url);
     xhr.setRequestHeader('Content-type', 'application/json');
     xhr.send(JSON.stringify(data));
