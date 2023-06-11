@@ -1,6 +1,10 @@
 let ballot_boxes;
 let ballot_results;
 let map = {};
+let total = {
+  state: 0,
+  opposition: 0
+}
 
 function loadBallotBoxes(callback)  {
   serverRequest('/api/ballot_boxes', 'GET', {}, res => {
@@ -32,8 +36,8 @@ function generateBallotBoxId(
 
 function loadMapData(callback) {
   loadBallotBoxes(() => {
-    loadBallotResults(() => {
-      ballot_results.forEach(async ballot_box => {
+    loadBallotResults(async () => {
+      await ballot_results.forEach(async (ballot_box, index) => {
         const city = ballot_boxes.find(each => each.ballot_box_number == ballot_box.ballot_box_number).city;
 
         if (!city) return;
@@ -44,7 +48,16 @@ function loadMapData(callback) {
           ballot_box.opposition_vote_count
         )).call();
 
-        if (!state) return;
+        if (
+          !state ||
+          !state.exists ||
+          !state.state_validator_count ||
+          !state.opposition_validator_count
+        ) {
+          if (index == ballot_results.length - 1)
+            callback();
+          return;
+        }
         
         if (!map[city])
           map[city] = {
@@ -54,22 +67,35 @@ function loadMapData(callback) {
             opposition_validator_count: 0,
             ballot_boxes: []
           };
+
+        total.state += parseInt(state.state_vote_count);
+        total.opposition += parseInt(state.opposition_vote_count);
   
         map[city].state_vote_count += parseInt(state.state_vote_count);
         map[city].opposition_vote_count += parseInt(state.opposition_vote_count);
         map[city].state_validator_count += parseInt(state.state_validator_count);
         map[city].opposition_validator_count += parseInt(state.opposition_validator_count);
   
-        map[city].ballot_boxes.push(ballot_box);
+        map[city].ballot_boxes.push({
+          ballot_box_number: ballot_box.ballot_box_number,
+          state_vote_count: parseInt(state.state_vote_count),
+          opposition_vote_count: parseInt(state.opposition_vote_count),
+          state_validator_count: parseInt(state.state_validator_count),
+          opposition_validator_count: parseInt(state.opposition_validator_count)
+        });
+
+        if (index == ballot_results.length - 1)
+          callback();
       });
-  
-      callback();
     });
   });
 };
 
 function updateMap() {
   loadMapData(() => {
+    document.getElementById('total-state').innerHTML = total.state + ' RED';
+    document.getElementById('total-opposition').innerHTML = total.opposition + ' BLUE';
+
     Object.keys(map).forEach(city => {
       const element = document.getElementById(city);
 

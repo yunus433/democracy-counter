@@ -57,7 +57,7 @@ window.addEventListener('load', () => {
               proof
             )
             .send({
-              from: "0xDdB5e6bC33476BA0eDD6AF072C4A0EA50Ce685d4",
+              from: Account,
               gas: 1000000,
               gasPrice: 10000000000
             });
