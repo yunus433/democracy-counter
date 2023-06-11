@@ -24,9 +24,9 @@ block main
       .all-content-middle-wrapper
         .all-content-middle-results-wrapper
           h1.all-content-middle-results-title Total:
-          h1.all-content-middle-results-number 5,000,323 RED
+          h1.all-content-middle-results-number RED
           .all-content-middle-results-color(style='background-color: var(--opposition-color)')
-          h1.all-content-middle-results-number 4,132,343 BLUE
+          h1.all-content-middle-results-number BLUE
           .all-content-middle-results-color(style='background-color: var(--state-color)')
         .all-content-middle-map-wrapper
           svg(class='map-turkiye' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1007.478 440')
@@ -200,63 +200,21 @@ block main
             g(class='map-each-city' id='duzce')
               path(d='M294.325,81.136l-4.501,1.279h-0.062l-0.031,0.031l-6.312,0.372l-5.376,0.466l0.624,2.156 l0.031,0.125v0.125l-0.658,2.907l-0.031,0.156l-0.094,0.094l-3.158,3.279l-0.031,0.031l-0.031,0.031l-3.157,2.06l-1.314,3.28 l-0.003,5.094l2.406,0.532l0.281,0.062l0.094,0.281l0.998,3.532l0.062,0.25l-0.156,0.188l-2.221,3.03l1.812,0.22h0.062 l11.312-0.119h0.157l0.125,0.062l1.874,1.22h0.062l3.999,1.221l4.376-1.06l1.657-1.874l-0.122-4.875v-0.094l0.062-0.125 c0,0,0.235-0.5,0.501-1.062c0.265-0.562,0.57-1.275,0.595-1.375c0.079-0.316,0.235-0.493,0.438-0.812s0.44-0.68,0.689-1.031 c0.495-0.702,0.97-1.343,0.97-1.343l0.125-0.188l0.219-0.031l3.531-0.498v0.031l4.501-1.029l4.282-1.092l2.813-2.686l0.441-4.938 l-3.188-0.783h-0.062l-3.062-0.502h-0.031l-8.938-0.63h-0.125l-0.125-0.094l-2.905-2.002l-0.031-0.062l-0.062-0.031L294.325,81.136 z')
         .all-content-middle-details-wrapper
-          //- span Click on a city to see details.
-          .all-content-middle-details-ballot-boxes-wrapper
+          span Click on a city to see details.
+          .all-content-middle-details-ballot-boxes-wrapper(style='display: none;')
             h1.all-content-middle-details-city-name İstanbul
             .all-content-middle-details-ballot-boxes-header-wrapper
               span.all-content-middle-details-ballot-boxes-id Ballot Box ID
               span.all-content-middle-details-ballot-boxes-result Result
               span.all-content-middle-details-ballot-boxes-consensus Consensus
             .all-content-middle-details-ballot-boxes-content-wrapper
-              .all-content-middle-details-each-ballot-box.all-content-middle-details-each-ballot-box-selected
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box.all-content-middle-details-each-ballot-box-selected
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-              .all-content-middle-details-each-ballot-box
-                span.all-content-middle-details-each-ballot-box-id #2002
-                span.all-content-middle-details-each-ballot-box-result-wrapper
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
-                  span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
-                span.all-content-middle-details-each-ballot-box-consensus 10
-          .all-content-middle-details-results-wrapper
+              //- .all-content-middle-details-each-ballot-box.all-content-middle-details-each-ballot-box-selected
+              //-   span.all-content-middle-details-each-ballot-box-id #2002
+              //-   span.all-content-middle-details-each-ballot-box-result-wrapper
+              //-     span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--state-color)') 150B
+              //-     span.all-content-middle-details-each-ballot-box-result-number(style='color: var(--opposition-color)') 201R
+              //-   span.all-content-middle-details-each-ballot-box-consensus 10
+          .all-content-middle-details-results-wrapper(style='display: none;')
             h1.all-content-middle-details-title Selected Ballot Id: #2002
             .all-content-middle-details-numbers-wrapper
               .all-content-middle-details-each-number-wrapper
@@ -269,8 +227,8 @@ block main
               span.all-content-middle-details-consensus-number 10
               span.all-content-middle-details-consensus-text consensus
       .all-content-right-wrapper
-        h1.all-content-right-title Istanbul
-        h2.all-content-right-subtitle #3001
+        h1.all-content-right-title
+        h2.all-content-right-subtitle
         img.all-content-right-image(src=`${URL}/img/box.png` alt='Democracy Counter Ballot Box')
         h2.all-content-right-motto Consensus of Conflicted Parties
         .all-content-right-transactions-wrapper
@@ -279,84 +237,12 @@ block main
             span.all-content-right-transactions-result Result
             span.all-content-right-transactions-proof Proof
           .all-content-right-transactions-content-wrapper
-            .all-content-right-each-transaction-wrapper(style='color: var(--state-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--opposition-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--state-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--opposition-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--opposition-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--state-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--state-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--opposition-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
-            .all-content-right-each-transaction-wrapper(style='color: var(--opposition-color)')
-              span.all-content-right-each-transaction-public-key 0x1234567890
-              span.all-content-right-each-transaction-result-wrapper
-                span.all-content-right-each-transaction-result-number 155R
-                span.all-content-right-each-transaction-result-seperator |
-                span.all-content-right-each-transaction-result-number 150B
-              a.all-content-right-each-transaction-proof(href='/' target='_blank')
-                svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
-                  path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')
+            //- .all-content-right-each-transaction-wrapper(style='color: var(--state-color)')
+            //-   span.all-content-right-each-transaction-public-key 0x1234567890
+            //-   span.all-content-right-each-transaction-result-wrapper
+            //-     span.all-content-right-each-transaction-result-number 155R
+            //-     span.all-content-right-each-transaction-result-seperator |
+            //-     span.all-content-right-each-transaction-result-number 150B
+            //-   a.all-content-right-each-transaction-proof(href='/' target='_blank')
+            //-     svg.all-content-right-each-transaction-proof-icon(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512')
+            //-       path(d='M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z')

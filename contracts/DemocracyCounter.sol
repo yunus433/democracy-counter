@@ -138,7 +138,7 @@ contract DemocracyCounter {
       node
     );
 
-    // require(isProofValid, "Error: Given information does not match merkle tree root on the contract.");
+    require(isProofValid, "Error: Given information does not match merkle tree root on the contract.");
 
     uint128 id = this.ballotIdToUint128(
       BallotId(
