@@ -16,10 +16,27 @@ block main
             path(d='M7.99985 9H0.0478516C0.549852 3.947 4.81285 0 9.99785 0C15.5209 0 19.9979 4.477 19.9979 10C19.9979 15.523 15.5209 20 9.99785 20C4.81285 20 0.549852 16.053 0.0478516 11H7.99785V14L12.9979 10L7.99785 6V9H7.99985Z')
     .all-content
       .all-content-left-wrapper
-        .all-content-left-title Notary Mode
+        .all-content-left-title Auditor Mode
         .all-content-how-it-works-wrapper
           h1.all-content-how-it-works-title How it Works?
-          p.all-content-how-it-works-text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis accumsan aliquam, quam libero ultricies nunc, nec ultricies nunc.
+          p.all-content-how-it-works-text All auditors aothorized by parties and each of them is responsible for one ballot box.
+          img.all-content-how-it-works-image(src=`${URL}/img/how-it-works.png` alt='Democracy Counter System Schema')
+          p.all-content-how-it-works-text All Auditors are registered with their public key opened for election. Parties declared their immutable lists and which contains name, public key social credentials for verification transparency for that election
+          .all-content-how-it-works-examples-wrapper
+            .all-content-how-it-works-each-example
+              span.all-content-how-it-works-each-example-text Sinan Cem
+              span.all-content-how-it-works-each-example-text 0x7C9a3f0e5e2f20B1930E3db57957fA64Dc71378A
+              span.all-content-how-it-works-each-example-text Party A
+              span.all-content-how-it-works-each-example-text Istanbul
+              span.all-content-how-it-works-each-example-text 1004
+            .all-content-how-it-works-each-example
+              span.all-content-how-it-works-each-example-text Ayşe Deniz
+              span.all-content-how-it-works-each-example-text 0x418062de303D476C1a45415fc4000eE06D4C5256
+              span.all-content-how-it-works-each-example-text Party B
+              span.all-content-how-it-works-each-example-text Istanbul
+              span.all-content-how-it-works-each-example-text 1016
+          img.all-content-how-it-works-image(src=`${URL}/img/how-it-works-2.png` alt='Democracy Counter System Schema')
+          p.all-content-how-it-works-text Just click the any city and check the registered and validated vote results by auditors which have consensus.
       .all-content-middle-wrapper
         h1.all-content-middle-ballot-box-number-title Ballot Box No:
         h2.all-content-middle-ballot-box-number #
@@ -28,10 +45,10 @@ block main
         .all-content-middle-results-wrapper
           .all-content-middle-results-each-side-wrapper
             span.all-content-middle-results-each-side-title(style='background-color: var(--state-color)') Party A
-            input.all-content-middle-results-each-side#state-result(type='number' value=123 placeholder='_ _ _ _' autocomplete='none')
+            input.all-content-middle-results-each-side#state-result(type='number' placeholder='_ _ _ _' autocomplete='none')
           .all-content-middle-results-each-side-wrapper
             span.all-content-middle-results-each-side-title(style='background-color: var(--opposition-color)') Party B
-            input.all-content-middle-results-each-side#opposition-result(type='number' value=342 placeholder='_ _ _ _' autocomplete='none')
+            input.all-content-middle-results-each-side#opposition-result(type='number' placeholder='_ _ _ _' autocomplete='none')
         .all-content-middle-send-results-button Approve the Results
       .all-content-right-wrapper#notary-wrapper(style='display: none;')
         .all-content-right-card-wrapper#state-auditor-card(style='display: none;')

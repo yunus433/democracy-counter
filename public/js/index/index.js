@@ -109,6 +109,26 @@ function updateMap() {
   });
 };
 
+// function handleTransaction(event) {
+//   const eachTransaction = document.createElement('div');
+//   eachTransaction.classList.add('all-content-right-each-transaction-wrapper');
+
+
+// }
+
+async function listenForEvents() {
+  if (isDeployed && Contract) {
+    await Contract.events
+      .ValidateBallotBox({ fromBlock: "earliest" })
+      .on('data', event => console.log(event))
+  } else {
+    setTimeout(() => {
+      listenForEvents();
+    }, 5);
+  }
+}
+
 window.addEventListener('load', async () => {
   updateMap();
+  await listenForEvents();
 });

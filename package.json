@@ -1,7 +1,7 @@
 {
   "name": "democracy-counter",
   "version": "1.0.0",
-  "description": "A new way to prove democracy: Consensus of Conflits",
+  "description": "Real Time Witnessing Protocol For Tracking & Registering Election Results Transparently",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

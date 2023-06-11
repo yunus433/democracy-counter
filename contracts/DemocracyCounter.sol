@@ -22,7 +22,7 @@ contract DemocracyCounter {
   bytes32 auditors_hash; // Merkle tree root for auditors
   mapping(uint128 => BallotBox) public ballotBoxes;
 
-  event ValidateBallotBox(uint32 ballot_box_number, uint32 state_vote_count, uint32 opposition_vote_count, uint32 state_validator_count, uint32 opposition_validator_count);
+  event ValidateBallotBox(bool side, uint32 ballot_box_number, uint32 state_vote_count, uint32 opposition_vote_count, uint32 state_validator_count, uint32 opposition_validator_count);
 
   // IMPORTANT
   // This contract should normally to be deployed with the following constructor
@@ -162,6 +162,7 @@ contract DemocracyCounter {
     }
 
     emit ValidateBallotBox(
+      side,
       ballot_box_number,
       state_vote_count,
       opposition_vote_count,

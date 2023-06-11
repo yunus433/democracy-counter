@@ -1,6 +1,7 @@
 let web3;
 let Contract;
 let Account;
+let isDeployed = false;
 
 function getDeployedAddressPath() {
   const deployedAddressPath = '/build/DemocracyCounter.bin';
@@ -54,12 +55,13 @@ async function connectMetaMask() {
 }
 
 window.addEventListener('load', async () => {
-  web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
+  web3 = await new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545'));
   web3.eth.Contract.handleRevert = true;
 
   const deployedAddress = getDeployedAddressPath();
   const bytecode = getBytecode();
-  const abi = getABI();
+  const abi = await getABI();
 
-  Contract = new web3.eth.Contract(abi, deployedAddress);
+  Contract = await new web3.eth.Contract(abi, deployedAddress);
+  isDeployed = true;
 });
