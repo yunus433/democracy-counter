@@ -6,7 +6,7 @@ function updateLoginState() {
   document.querySelector('.all-header-login-info').style.backgroundColor = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
   document.querySelector('.all-header-login-info').style.color = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
 
-  document.querySelector('.all-header-login-part').innerHTML = User.side ? 'Opposition' : 'State';
+  document.querySelector('.all-header-login-part').innerHTML = User.side ? 'Party B' : 'Party A';
   document.querySelector('.all-header-login-address').innerHTML = User.public_key;
 
   if (document.getElementById('notary-wrapper')) {
@@ -26,7 +26,7 @@ function updateLoginState() {
     card.querySelector('.all-content-right-card-ballot-number').innerHTML = '#' + User.ballot_box_number;
 
     document.getElementById('notary-side').style.backgroundColor = (User.side ? 'var(--opposition-color)' : 'var(--state-color)');
-    document.getElementById('notary-side').innerHTML = 'Notary of the ' + (User.side ? 'Opposition' : 'State');
+    document.getElementById('notary-side').innerHTML = 'Notary of the ' + (User.side ? 'Party B' : 'Party A');
 
     document.querySelector('.all-content-middle-ballot-box-number').innerHTML = '#' + User.ballot_box_number;
   } else {

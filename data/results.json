@@ -1,7 +1,1 @@
-[
-  {
-    "ballot_box_number": 225,
-    "state_vote_count": 123,
-    "opposition_vote_count": 342
-  }
-]
+[{"ballot_box_number":225,"state_vote_count":123,"opposition_vote_count":342},{"ballot_box_number":225,"state_vote_count":1233,"opposition_vote_count":3342}]
