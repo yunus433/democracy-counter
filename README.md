@@ -7,6 +7,12 @@ Scroll Alpha Testnet Address: **x5B1D0ED7e2F98805ecC3661221615663de95809e**
 <br/>
 
 Scroll Alpha Testnet URL: [https://blockscout.scroll.io/address/0x5B1D0ED7e2F98805ecC3661221615663de95809e](https://blockscout.scroll.io/address/0x5B1D0ED7e2F98805ecC3661221615663de95809e)
+<br/>
+
+Optimism Mainnet Address: **0x5B1D0ED7e2F98805ecC3661221615663de95809e**
+<br/>
+
+Optimisim Mainnet URL: [https://optimistic.etherscan.io/address/0x5B1D0ED7e2F98805ecC3661221615663de95809e](https://optimistic.etherscan.io/address/0x5B1D0ED7e2F98805ecC3661221615663de95809e)
 
 A few weeks ago, Turkey held national elections, and a significant majority of active Turkish citizens (93% out of 64 million) participated in the voting process. While there are generally no concerns about anonymous voting, there are significant doubts about the transparency of the **vote counting process**. Following the vote count, we faced miscommunication issues that resulted in fear, uncertainty, and doubt (FUD) when registering the vote results to the central database.
 
